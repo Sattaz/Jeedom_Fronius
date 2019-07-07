@@ -1,0 +1,16 @@
+{
+	"id" : "fronius",
+	"name" : "Onduleur Fronius",
+	"description" : "Plugin pour récupérer les valeurs d'un onduleur Fronius",
+	"licence" : "AGPL",
+	"author" : "Sattaz",
+	"require" : "3.2",
+	"category" : "monitoring",
+	"hasDependency" : false,
+	"hasOwnDeamon" : false,
+	"maxDependancyInstallTime" : 0,
+	"changelog" : "https://github.com/Sattaz/Jeedom_SMA_Sunny_Boy/blob/master/Fronius/docs/fr_FR/changelog.md",
+	"documentation" : "https://github.com/Sattaz/Jeedom_SMA_Sunny_Boy/blob/master/Fronius/docs/fr_FR/index.md",
+	"language" : "fr_FR",
+	"compatibility" : ""
+}
