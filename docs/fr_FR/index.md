@@ -18,7 +18,7 @@ Une fois installé, il suffit de créer un nouvel équipement et de le configure
 Comme pour chaque plugin Jeedom, il faudra indiquer le 'Nom de l'équipement', un 'Objet parent' et une 'Catégorie'.
 Ne pas oublier de cocher les cases 'Activer' et 'Visible'.
 
-Puis viennent aussi quelques paramètres dédiés aux spécification de l'onduleur SMA:
+Puis viennent aussi quelques paramètres dédiés aux spécification de l'onduleur Fronius:
 
 -   IP de l'onduleur : veuillez renseigner l'adresse IP de l'interface web de l'onduleur.
 
