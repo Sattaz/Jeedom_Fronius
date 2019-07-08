@@ -9,8 +9,8 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"changelog" : "https://github.com/Sattaz/Jeedom_SMA_Sunny_Boy/blob/master/Fronius/docs/fr_FR/changelog.md",
-	"documentation" : "https://github.com/Sattaz/Jeedom_SMA_Sunny_Boy/blob/master/Fronius/docs/fr_FR/index.md",
+	"changelog" : "https://sattaz.github.io/Jeedom_Fronius/#language#/changelog",
+	"documentation" : "https://sattaz.github.io/Jeedom_Fronius/#language#/",
 	"language" : "fr_FR",
 	"compatibility" : ""
 }
