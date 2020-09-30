@@ -1,0 +1,188 @@
+{
+  "name": "Primo",
+  "commands": [
+     {
+      "name": "Rafraichir",
+      "type": "action",
+      "subtype": "other",
+      "display": {
+        "icon": "<i class=\"fas fa-refresh\"><\/i>",
+        "generic_type": "DONT"
+      },
+      "configuration" : {
+        "request" : "refresh"
+      },
+      "isVisible": 1,
+      "logicalId": "refresh"
+    },
+    {
+      "name": "Statut",
+      "type": "info",
+      "subtype": "string",
+      "isVisible": 1,
+      "isHistorized": 0,
+      "logicalId": "StatusString"
+    },
+	{
+      "name": "Statut Binaire",
+      "type": "info",
+      "subtype": "binary",
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "StatusBinaire"
+    },
+    {
+      "name": "Version API",
+      "type": "info",
+      "subtype": "string",
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "API"
+    },
+    {
+      "name": "PV Production",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "W",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "PV_Prod",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+    {
+      "name": "PV Total",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Wh",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "PV_Tot",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "PV Jour",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Wh",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "PV_Jour",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "PV Année",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Wh",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "PV_An",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Fréquence",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Hz",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Freq",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Volts AC",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "V",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "VoltsAC",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Volts DC",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "V",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "VoltsDC",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Amps AC",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "A",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "AmpsAC",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Amps DC",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "A",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "AmpsDC",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    }
+
+  ]
+}
