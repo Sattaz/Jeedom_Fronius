@@ -69,183 +69,9 @@ class fronius extends eqLogic {
     }
 
     public function postSave() {
-		$info = $this->getCmd(null, 'pv_power');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('PV Production', __FILE__));
-		}
-		$info->setLogicalId('pv_power');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setConfiguration('minValue', 0);
-		$info->setConfiguration('maxValue', $this->getConfiguration("Power"));
-		$info->setIsHistorized(1);
-		$info->setUnite('W');
-		$info->setOrder(1);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'pv_total');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('PV Total', __FILE__));
-		}
-		$info->setLogicalId('pv_total');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setIsHistorized(1);
-		$info->setUnite('Wh');
-		$info->setOrder(2);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'frequency');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Fréquence', __FILE__));
-		}
-		$info->setLogicalId('frequency');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setConfiguration('minValue', 0);
-		$info->setConfiguration('maxValue', 60);
-		$info->setIsHistorized(1);
-		$info->setUnite('Hz');
-		$info->setOrder(3);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'voltage_AC');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Volts AC', __FILE__));
-		}
-		$info->setLogicalId('voltage_AC');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setConfiguration('minValue', 0);
-		$info->setConfiguration('maxValue', 250);
-		$info->setIsHistorized(1);
-		$info->setUnite('V');
-		$info->setOrder(4);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'voltage_DC');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Volts DC', __FILE__));
-		}
-		$info->setLogicalId('voltage_DC');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setConfiguration('minValue', 0);
-		$info->setConfiguration('maxValue', 500);
-		$info->setIsHistorized(1);
-		$info->setUnite('V');
-		$info->setOrder(5);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'current_AC');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Amps AC', __FILE__));
-		}
-		$info->setLogicalId('current_AC');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setConfiguration('minValue', 0);
-		$info->setConfiguration('maxValue', 50);
-		$info->setIsHistorized(1);
-		$info->setUnite('A');
-		$info->setOrder(6);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'current_DC');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Amps DC', __FILE__));
-		}
-		$info->setLogicalId('current_DC');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setConfiguration('minValue', 0);
-		$info->setConfiguration('maxValue', 50);
-		$info->setIsHistorized(1);
-		$info->setUnite('A');
-		$info->setOrder(7);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'pv_day');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('PV Jour', __FILE__));
-		}
-		$info->setLogicalId('pv_day');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setIsHistorized(1);
-		$info->setUnite('Wh');
-		$info->setOrder(8);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'pv_year');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('PV Année', __FILE__));
-		}
-		$info->setLogicalId('pv_year');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setIsHistorized(1);
-		$info->setUnite('Wh');
-		$info->setOrder(9);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'VersionAPI');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Version API', __FILE__));
-		}
-		$info->setLogicalId('VersionAPI');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('string');
-		$info->setIsHistorized(0);
-		$info->setIsVisible(0);
-		$info->setOrder(10);
-		$info->save();
-		
-		$info = $this->getCmd(null, 'status');
-		if (!is_object($info)) {
-			$info = new froniusCmd();
-			$info->setName(__('Statut', __FILE__));
-		}
-		$info->setLogicalId('status');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('string');
-		$info->setIsHistorized(0);
-		$info->setIsVisible(1);
-		$info->setOrder(11);
-		$info->save();
-		
-		$refresh = $this->getCmd(null, 'refresh');
-		if (!is_object($refresh)) {
-			$refresh = new froniusCmd();
-			$refresh->setName(__('Rafraîchir', __FILE__));
-		}
-		$refresh->setEqLogic_id($this->getId());
-		$refresh->setLogicalId('refresh');
-		$refresh->setType('action');
-		$refresh->setSubType('other');
-		$refresh->setOrder(12);
-		$refresh->save();
+		$this->loadCmdFromConf($this->getConfiguration('type'));
+		$this->loadWebhook();
+			
     }
 
     public function preUpdate() {
@@ -266,7 +92,274 @@ class fronius extends eqLogic {
     public function postRemove() {
         
     }
-	
+  
+	public function loadCmdFromConf($type) {
+		log::add('fronius','debug','Loading cmd for type : ' . $type . ' on ' . $this->getName());
+		if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
+			return;
+		}
+		$content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
+        log::add('fronius','debug','Loading  contenu : ' . $content . ' on ' . $this->getName());
+		if (!is_json($content)) {
+          	log::add('fronius','debug','Loading  contenu : pas ok');
+			return;
+		}
+		$device = json_decode($content, true);
+        log::add('fronius','debug','Loading  device : ' . $device);
+		if (!is_array($device) || !isset($device['commands'])) {
+			return true;
+		}
+		foreach ($device['commands'] as $command) {
+			$cmd = null;
+			foreach ($this->getCmd() as $liste_cmd) {
+              	log::add('fronius','debug','Loading  logical id : ' . $command['logicalId']);
+				if ((isset($command['logicalId']) && $liste_cmd->getLogicalId() == $command['logicalId'])
+				|| (isset($command['name']) && $liste_cmd->getName() == $command['name'])) {
+					$cmd = $liste_cmd;
+					break;
+				}
+			}
+			if ($cmd == null || !is_object($cmd)) {
+				log::add('fronius','debug','Creating cmd : ' . $command['name'] );
+				$cmd = new shellyCmd();
+				$cmd->setEqLogic_id($this->getId());
+				utils::a2o($cmd, $command);
+				$cmd->save();
+			}
+          	
+		}
+        log::add('fronius','debug','Refresh : ' . print_r($data,true));
+	}
+  
+    public function loadWebhook() {
+      
+      
+      	$Fronius_IP = $this->getConfiguration("IP");
+		$Fronius_Port = $this->getConfiguration("Port");
+		$VersionAPI = '';
+		$Url = '';
+        
+      
+        if (strlen($Fronius_IP) == 0) {
+			log::add('fronius', 'debug','No IP defined for PV inverter interface ...');
+			$this->checkAndUpdateCmd('status', 'IP onduleur manquante ...');
+			return;
+		}
+		
+		if (strlen($Fronius_Port) == 0) {
+			log::add('fronius', 'debug','No port defined for PV inverter interface. port 80 used');
+          	$Fronius_Port = 80;
+		}
+		log::add('fronius', 'debug','ip= '.$Fronius_IP);
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+		// READ STORED API VERSION
+		try {
+			$cmd = $this->getCmd(null, 'VersionAPI'); // On recherche la commande refresh de l’équipement
+			if (is_object($cmd)) { //elle existe et on lance la commande
+				$VersionAPI = $cmd->execCmd();
+			}
+		} catch (Exception $e) {
+			$VersionAPI = '';
+			log::add('fronius', 'error','Error reading API Version: '.$e);
+		}
+		
+		if ($VersionAPI == '') {
+			curl_setopt($ch, CURLOPT_URL, 'http://'.$Fronius_IP.':'.$Fronius_Port.'/solar_api/GetAPIVersion.cgi');
+			$data = curl_exec($ch);
+          log::add('fronius', 'debug','data= '.$data);
+			if (curl_errno($ch)) {
+				curl_close ($ch);
+				log::add('fronius', 'error','Error getting inverter API Version: '.curl_error($ch));
+				$this->checkAndUpdateCmd('status', 'Erreur Version API');
+				return;
+			}
+			$json = json_decode($data, true);
+			$VersionAPI = $json['APIVersion'];
+			$this->checkAndUpdateCmd('API', $VersionAPI);
+		}
+		
+		switch ($VersionAPI) {		
+			case '0':
+				$Url = 'http://'.$Fronius_IP.':'.$Fronius_Port.'/solar_api/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData';
+				break;	
+
+			case '1';
+				if ($this->getConfiguration('type') == "Primo") {
+                    $Url = 'http://'.$Fronius_IP.':'.$Fronius_Port.'/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData';
+                }
+                if ($this->getConfiguration('type') == "SymoGen24") {
+                    $Url = 'http://'.$Fronius_IP.':'.$Fronius_Port.'/solar_api/v1/GetInverterRealtimeData.cgi?scope=Device&DataCollection=CommonInverterData';
+                }
+                if ($this->getConfiguration('type') == "SmartMeter") {
+                    $Url = 'http://'.$Fronius_IP.':'.$Fronius_Port.'/solar_api/v1/GetMeterRealtimeData.cgi?Scope=Device&DeviceId=0';
+                }
+            	
+				break;
+		
+			default:
+				log::add('fronius', 'error','Error getting inverter API Version: '.curl_error($ch));
+				$this->checkAndUpdateCmd('status', 'Version API non supportée');
+				return;
+		}
+      
+      
+      
+        log::add('fronius','debug','Call : ' . $Url);
+      
+        curl_setopt($ch, CURLOPT_URL, $Url);
+		$data = curl_exec($ch);
+		
+		if (curl_errno($ch)) {
+			curl_close ($ch);
+			log::add('fronius', 'error','Error getting inverter values: '.curl_error($ch));
+			$this->checkAndUpdateCmd('status', 'Erreur Données');
+			return;
+		}
+        log::add('fronius','debug','Call : ' . $data);
+        $json = json_decode($data, true);
+		log::add('fronius', 'debug','All good22: json='. $json['Body']['Data']['IAC']['Value']);
+      
+      	if (isset($json['Body']['Data']['IAC']['Value']) == true && ($this->getConfiguration('type') == 'Primo' || $this->getConfiguration('type') == 'SymoGen24')) {
+          log::add('fronius', 'debug','All good33: Data='. $data);
+        
+			curl_close ($ch);
+			$this->checkAndUpdateCmd('PV_Prod', $json['Body']['Data']['PAC']['Value']);
+			$this->checkAndUpdateCmd('PV_Tot', $json['Body']['Data']['TOTAL_ENERGY']['Value']);
+			$this->checkAndUpdateCmd('Freq', $json['Body']['Data']['FAC']['Value']);
+			$this->checkAndUpdateCmd('VoltsAC', $json['Body']['Data']['UAC']['Value']);
+			$this->checkAndUpdateCmd('VoltsDC', $json['Body']['Data']['UDC']['Value']);
+			$this->checkAndUpdateCmd('AmpsAC', $json['Body']['Data']['IAC']['Value']);
+			$this->checkAndUpdateCmd('AmpsDC', $json['Body']['Data']['IDC']['Value']);
+			$this->checkAndUpdateCmd('PV_Jour', $json['Body']['Data']['DAY_ENERGY']['Value']);
+			$this->checkAndUpdateCmd('PV_An', $json['Body']['Data']['YEAR_ENERGY']['Value']);
+          log::add('fronius', 'debug','Status = '.$json['Body']['Data']['DeviceStatus']['InverterState']);
+			if ($json['Body']['Data']['DeviceStatus']['InverterState'] == 'Running') {
+				$this->checkAndUpdateCmd('StatusString', 'En ligne');
+              	$this->checkAndUpdateCmd('StatusBinaire', '1');
+				log::add('fronius', 'debug','Status OK= ');
+			//return;
+			} else {
+				$this->checkAndUpdateCmd('StatusString', 'Hors Ligne ...');
+              	$this->checkAndUpdateCmd('StatusBinaire', '0');
+				log::add('fronius', 'debug','Inverter is off-line ...');
+          		//return;
+			}
+		}
+        if (isset($json['Body']['Data']['IAC']['Value']) == true && $this->getConfiguration('type') == 'SymoGen24') {
+          log::add('fronius', 'debug','Symo='. $data);
+
+			$this->checkAndUpdateCmd('VoltsACL2', $json['Body']['Data']['UAC_L1']['Value']);
+			$this->checkAndUpdateCmd('VoltsACL3', $json['Body']['Data']['UAC_L2']['Value']);
+			$this->checkAndUpdateCmd('VoltsDCL2', $json['Body']['Data']['UDC_2']['Value']);
+			$this->checkAndUpdateCmd('AmpsACL1', $json['Body']['Data']['IAC_L1']['Value']);
+			$this->checkAndUpdateCmd('AmpsACL2', $json['Body']['Data']['IAC_L2']['Value']);
+			$this->checkAndUpdateCmd('AmpsACL3', $json['Body']['Data']['IAC_L3']['Value']);
+			$this->checkAndUpdateCmd('AmpsDC2', $json['Body']['Data']['IDC_2']['Value']);
+			return;
+		}
+      
+    } 
+/*
+      
+		$request_http = new com_http($Url);
+		$request_http->setNoReportError(true);
+		if ($this->getConfiguration('user', '') != '' || $this->getConfiguration('password', '') != '') {
+			$auth = base64_encode(trim($this->getConfiguration('user')) . ':' . trim($this->getConfiguration('password')));
+			$request_http->setHeader(array("Authorization: Basic $auth"));
+		}
+		return $request_http->exec(30);
+      
+		
+		$status = $this->sendCommand('status');
+		$data = json_decode($status,true);
+		log::add('fronius','debug','Refresh : ' . print_r($data,true));
+		if (isset($data['relays']) == true && $this->getConfiguration('type') != 'shelly2-roller') {
+			$i = 0;
+			$url = 'http://' . config::byKey('internalAddr') . ':8122/id=' . $this->getId();
+			foreach ($data['relays'] as $relay) {
+				$url = $url . '&relay=' . $i . '&value=';
+				$this->sendCommand('settings/relay/' . $i . '?out_on_url=' . urlencode($url . 'out_on_url'));
+				$this->sendCommand('settings/relay/' . $i . '?out_off_url=' . urlencode($url . 'out_off_url'));
+				$settings = json_decode($this->sendCommand('settings/relay/' . $i), true);
+				log::add('shelly', 'debug', 'Button : ' . print_r($settings, true));
+				if ($settings['btn_type'] == 'detached') {
+					$cmd = shellyCmd::byEqLogicIdAndLogicalId($this->getId(),'button' . $i);
+					if (!is_object($cmd)) {
+						$cmd = new shellyCmd();
+						$cmd->setName('Bouton ' . $i);
+						$cmd->setEqLogic_id($this->id);
+						$cmd->setEqType('shelly');
+						$cmd->setLogicalId('button' . $i);
+						$cmd->setType('info');
+						$cmd->setSubType('binary');
+						$cmd->save();
+					}
+					$this->sendCommand('settings/relay/' . $i . '?btn_on_url=' . urlencode($url . 'btn_on_url'));
+					$this->sendCommand('settings/relay/' . $i . '?btn_off_url=' . urlencode($url . 'btn_off_url'));
+				}
+				if ($this->getConfiguration('type') != 'shelly4') {
+					$this->sendCommand('settings/relay/' . $i . '?longpush_url=' . urlencode($url . 'longpush_url'));
+					$this->sendCommand('settings/relay/' . $i . '?shortpush_url=' . urlencode($url . 'shortpush_url'));
+				}
+				$i++;
+			}
+		}
+		if (isset($data['inputs']) == true) {
+			$i = 0;
+			$url = 'http://' . config::byKey('internalAddr') . ':8122/id=' . $this->getId();
+			foreach ($data['inputs'] as $relay) {
+				$url = $url . '&input=' . $i . '&';
+				if ($this->getConfiguration('type') == 'button1') {
+					$this->sendCommand('settings/input/' . $i . '?shortpush_url=' . urlencode($url . 'event=s'));
+					$this->sendCommand('settings/input/' . $i . '?longpush_url=' . urlencode($url . 'event=l'));
+					$this->sendCommand('settings/input/' . $i . '?double_shortpush_url=' . urlencode($url . 'event=ss'));
+					$this->sendCommand('settings/input/' . $i . '?triple_shortpush_url=' . urlencode($url . 'event=sss'));
+				} else {
+					$settings = json_decode($this->sendCommand('settings/input/' . $i), true);
+					if ($settings['btn_type'] == "momentary") {
+						$this->sendCommand('settings/input/' . $i . '?shortpush_url=' . urlencode($url . 'event=s'));
+						$this->sendCommand('settings/input/' . $i . '?longpush_url=' . urlencode($url . 'event=l'));
+						$this->sendCommand('settings/input/' . $i . '?double_shortpush_url=' . urlencode($url . 'event=ss'));
+						$this->sendCommand('settings/input/' . $i . '?triple_shortpush_url=' . urlencode($url . 'event=sss'));
+						$this->sendCommand('settings/input/' . $i . '?shortpush_longpush_url=' . urlencode($url . 'event=sl'));
+						$this->sendCommand('settings/input/' . $i . '?longpush_shortpush_url=' . urlencode($url . 'event=ls'));
+					} else {
+						$this->sendCommand('settings/input/' . $i . '?btn_on_url=' . urlencode($url . 'value=1'));
+						$this->sendCommand('settings/input/' . $i . '?btn_off_url=' . urlencode($url . 'value=0'));
+					}
+				}
+				$i++;
+			}
+		}
+		if (isset($data['emeters']) == true && ($this->getConfiguration('type') == 'shellyem' || $this->getConfiguration('type') == 'shelly3em')) {
+			$i = 0;
+			$url = 'http://' . config::byKey('internalAddr') . ':8122/id=' . $this->getId();
+			foreach ($data['emeters'] as $relay) {
+				$this->sendCommand('settings/?over_power_url=' . urlencode($url . 'out_on=' . $i));
+				$this->sendCommand('settings/?under_power_url=' . urlencode($url . 'out_off=' . $i));
+				$i++;
+			}
+		}
+		if (isset($data['hum']) == true) {
+			$url = 'http://' . config::byKey('internalAddr') . ':8122/id=' . $this->getId() . '&';
+			$this->sendCommand('settings/?report_url=' . urlencode($url));
+		}
+		if (isset($data['lux.value']) == true) {
+			$url = 'http://' . config::byKey('internalAddr') . ':8122/id=' . $this->getId() . '&';
+			$this->sendCommand('settings/?dark_threshold=' . urlencode($url . "illumination=dark"));
+			$this->sendCommand('settings/?twilight_threshold=' . urlencode($url . "illumination=twilight"));
+		}
+		if (isset($data['gas_sensor']) == true) {
+			$url = 'http://' . config::byKey('internalAddr') . ':8122/id=' . $this->getId() . '&';
+			$this->sendCommand('settings/?alarm_off_url=' . urlencode($url . "alarm_state=none"));
+			$this->sendCommand('settings/?alarm_mild_url=' . urlencode($url . "alarm_state=mild"));
+			$this->sendCommand('settings/?alarm_heavy_url=' . urlencode($url . "alarm_state=heavy"));
+		}
+	}
+  */
+  
 	public function getFroniusData() {
 		$Fronius_IP = $this->getConfiguration("IP");
 		$Fronius_Port = $this->getConfiguration("Port");
@@ -280,7 +373,8 @@ class fronius extends eqLogic {
 		}
 		
 		if (strlen($Fronius_Port) == 0) {
-			$Fronius_Port = 80;
+			log::add('fronius', 'debug','No port defined for PV inverter interface. port 80 used');
+          	$Fronius_Port = 80;
 		}
 	
 		$ch = curl_init();
@@ -376,7 +470,7 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('pv_year', $pv_year);
 			
 			$this->checkAndUpdateCmd('status', 'OK');
-			log::add('fronius', 'debug','All good: Data='.$data);
+			log::add('fronius', 'debug','All good: Data2='.$data);
 			return;
 		}
 		
@@ -424,7 +518,7 @@ class froniusCmd extends cmd {
 				$eqlogic = $this->getEqLogic();
 				switch ($this->getLogicalId()) {		
 					case 'refresh':
-						$info = $eqlogic->getFroniusData();
+						$info = $eqlogic->loadWebhook();
 						break;					
 		}
     }
@@ -432,3 +526,60 @@ class froniusCmd extends cmd {
 }
 
 
+
+
+
+class shellyCmd extends cmd {
+	//add functions for "virtual equipements" internal to the plugin for gsh compatibility
+	public function preSave() {
+		
+	}
+
+	public function virtualCmd($_options) {
+		$cmd = cmd::byId($this->getConfiguration('idVirtual'));
+		if (!is_object($cmd)) {return;}
+		$cmd->execCmd($_options);
+	}
+
+	public function execute($_options = null) {
+		if ($this->getConfiguration('virtual') == 1) {
+			$this->virtualCmd($_options);
+			return;
+		}
+		switch ($this->getType()) {
+			case 'action' :
+			$eqLogic = $this->getEqLogic();
+			if ($this->getLogicalId() != 'refresh') {
+				$request = $this->getConfiguration('request');
+				switch ($this->getSubType()) {
+					case 'color':
+					list($red, $green, $blue) = sscanf($_options['color'], "#%02x%02x%02x");
+					$request = trim(str_replace('#red#',$red, $request));
+					$request = trim(str_replace('#green#',$green, $request));
+					$request = trim(str_replace('#blue#',$blue, $request));
+					break;
+					case 'slider':
+					$request = trim(str_replace('#slider#',$_options['slider'], $request));
+					break;
+					case 'message':
+					$request = trim(str_replace('#title#',$_options['title'], $request));
+					break;
+					case 'select':
+					$request = trim(str_replace('#select#',$_options['select'], $request));
+					break;
+				}
+				if ($eqLogic->getConfiguration('cloud') != 1) {
+					$eqLogic->sendCommand($request);
+				} else {
+					$explode = explode('&',$request);
+					foreach ($explode as $arg) {
+						$final = explode('=',$arg);
+						$array[$final[0]] = $final[1];
+					}
+					$eqLogic->sendCloud($this->getConfiguration('cloud_url'),$array);
+				}
+			}
+			$eqLogic->refresh();
+		}
+	}
+}
