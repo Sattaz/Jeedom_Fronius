@@ -1,0 +1,260 @@
+{
+  "name": "SmartMeter",
+  "commands": [
+     {
+      "name": "Rafraichir",
+      "type": "action",
+      "subtype": "other",
+      "display": {
+        "icon": "<i class=\"fas fa-refresh\"><\/i>",
+        "generic_type": "DONT"
+      },
+      "configuration" : {
+        "request" : "refresh"
+      },
+      "isVisible": 1,
+      "logicalId": "refresh"
+    },
+    {
+      "name": "Visible",
+      "type": "info",
+      "subtype": "binary",
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "visible"
+    },
+	{
+      "name": "Statut Binaire",
+      "type": "info",
+      "subtype": "binary",
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "StatusBinaire"
+    },
+    {
+      "name": "Production",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Wh",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Production",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+    {
+      "name": "Consommation",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Wh",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Consommation",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Fréquence",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "Hz",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Freq",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Volts AC L1",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "V",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "VoltsAC",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Volts AC L2",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "V",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "VoltsACL2",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Volts AC L3",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "V",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "VoltsACL3",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Amps AC",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "A",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "AmpsAC",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+		{
+      "name": "Amps AC L1",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "A",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "AmpsACL1",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+		{
+      "name": "Amps AC L2",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "A",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "AmpsACL2",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+		{
+      "name": "Amps AC L3",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "A",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "AmpsACL3",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Watt L1",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "W",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Watt L1",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Watt L2",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "W",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Watt L2",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+		{
+      "name": "Watt L3",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "W",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Watt L3",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    },
+	{
+      "name": "Watt",
+      "type": "info",
+      "subtype": "numeric",
+	  "unite": "W",
+	  "display": {
+        "generic_type": "DONT"
+      },
+      "isVisible": 1,
+      "isHistorized": 1,
+      "logicalId": "Watt",
+      "template": {
+        "dashboard": "line",
+        "mobile": "line"
+      }
+    }
+
+  ]
+}

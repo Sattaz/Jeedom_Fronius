@@ -52,7 +52,7 @@ foreach ($eqLogics as $eqLogic) {
 </div>
 </div>
 
-<div class="col-xs-12 eqLogic" style="display: none;">
+ <div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;">
 		<div class="input-group pull-right" style="display:inline-flex">
 			<span class="input-group-btn">
 				<a class="btn btn-default btn-sm eqLogicAction roundedLeft" data-action="configure"><i class="fa fa-cogs"></i> {{Configuration avancée}}</a><a class="btn btn-default btn-sm eqLogicAction" data-action="copy"><i class="fas fa-copy"></i> {{Dupliquer}}</a><a class="btn btn-sm btn-success eqLogicAction" data-action="save"><i class="fas fa-check-circle"></i> {{Sauvegarder}}</a><a class="btn btn-danger btn-sm eqLogicAction roundedRight" data-action="remove"><i class="fas fa-minus-circle"></i> {{Supprimer}}</a>
@@ -126,7 +126,18 @@ foreach (jeeObject::all() as $object) {
 			<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="Port" placeholder="Port de l'onduleur"/>
         </div>
     </div>
-    <div class="form-group">
+
+    <div class="form-group" id="type">
+              <label class="col-sm-3 control-label">{{Type}}</label>
+              <div class="col-sm-3">
+                <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="type" id="typefield">
+                  <option value="Primo" selected>Primo</option>
+                  <option value="SymoGen24">Symo Gen 24</option>
+                  <option value="SmartMeter">Smart Meter</option>
+                </select>
+              </div>
+     </div>
+     <div class="form-group" id="PuissanceCrete">
         <label class="col-sm-3 control-label">{{Puissance crête}}</label>
         <div class="col-sm-3">
             <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="Power" placeholder="Puissance crête de l'installation photovoltaïque (en Watts)"/>
