@@ -262,8 +262,8 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('AmpsDC2', $json['Body']['Data']['IDC_2']['Value']);
 			return;
 		}
-	if (   $this->getConfiguration('type') == 'SmartMeter3p') {
-		//isset($json['Body']['Data']['Details']['Model']) == true &&
+	if (isset($json['Body']['Data']['Details']['Model']) == true && ($json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1" || $json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1") &&  $this->getConfiguration('type') == 'SmartMeter3ph') {
+		
           log::add('fronius', 'debug','All good33: Data='. $data);
         
 			curl_close ($ch);
@@ -285,7 +285,7 @@ class fronius extends eqLogic {
           
 			
 		}
-	   if (isset($json['Body']['Data']['Details']['Model']) == true && $json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1" &&  $this->getConfiguration('type') == 'SmartMeter1p') {
+	   if (isset($json['Body']['Data']['Details']['Model']) == true && $json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1" &&  $this->getConfiguration('type') == 'SmartMeter1ph') {
           log::add('fronius', 'debug','All good33: Data='. $data);
         
 			curl_close ($ch);
