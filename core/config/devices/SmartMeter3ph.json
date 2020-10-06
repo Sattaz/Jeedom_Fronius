@@ -40,7 +40,8 @@
         "generic_type": "DONT"
       },
       "configuration" : {
-        "historizeMode":"none"
+        "historizeMode":"none",
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -59,7 +60,8 @@
         "generic_type": "DONT"
       },
       "configuration" : {
-        "historizeMode":"none"
+        "historizeMode":"none",
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -93,6 +95,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "VoltsAC",
@@ -108,6 +113,9 @@
 	  "unite": "V",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -125,6 +133,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "VoltsACL3",
@@ -140,6 +151,9 @@
 	  "unite": "A",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -157,6 +171,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "AmpsACL2",
@@ -172,6 +189,9 @@
 	  "unite": "A",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -189,6 +209,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "WattL1",
@@ -204,6 +227,9 @@
 	  "unite": "W",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -221,6 +247,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "WattL3",
@@ -236,6 +265,9 @@
 	  "unite": "W",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
