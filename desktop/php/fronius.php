@@ -133,7 +133,8 @@ foreach (jeeObject::all() as $object) {
                 <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="type" id="typefield">
                   <option value="Primo" selected>Primo</option>
                   <option value="SymoGen24">Symo Gen 24</option>
-                  <option value="SmartMeter">Smart Meter</option>
+                  <option value="SmartMeter1ph">Smart Meter 1 phase</option>
+		  <option value="SmartMeter3ph">Smart Meter 3 phases</option>
                 </select>
               </div>
      </div>
