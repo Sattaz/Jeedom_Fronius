@@ -276,9 +276,9 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('AmpsACL1', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_01_F32']);
 			$this->checkAndUpdateCmd('AmpsACL2', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_02_F32']);
 			$this->checkAndUpdateCmd('AmpsACL3', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_03_F32']);
-			$this->checkAndUpdateCmd('WattL1', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_01_F64']);
-			$this->checkAndUpdateCmd('WattL2', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_02_F64']);
-			$this->checkAndUpdateCmd('WattL3', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_03_F64']);
+			$this->checkAndUpdateCmd('WattL1', $json['Body']['Data']['SMARTMETER_POWERACTIVE_01_F64']);
+			$this->checkAndUpdateCmd('WattL2', $json['Body']['Data']['SMARTMETER_POWERACTIVE_02_F64']);
+			$this->checkAndUpdateCmd('WattL3', $json['Body']['Data']['SMARTMETER_POWERACTIVE_03_F64']);
 			$this->checkAndUpdateCmd('Watt', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_SUM_F64']);
 			$this->checkAndUpdateCmd('visible', $json['Body']['Data']['COMPONENTS_MODE_VISIBLE_U16']);
 			$this->checkAndUpdateCmd('StatusBinaire', $json['Body']['Data']['COMPONENTS_MODE_ENABLE_U16']);
