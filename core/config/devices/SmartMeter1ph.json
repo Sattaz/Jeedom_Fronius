@@ -77,6 +77,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "Freq",
@@ -92,6 +95,9 @@
 	  "unite": "V",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -109,6 +115,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "AmpsAC",
@@ -124,6 +133,9 @@
 	  "unite": "W",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
