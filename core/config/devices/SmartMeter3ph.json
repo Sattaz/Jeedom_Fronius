@@ -39,6 +39,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+        "historizeMode":"none"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "Production",
@@ -54,6 +57,9 @@
 	  "unite": "Wh",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+        "historizeMode":"none"
       },
       "isVisible": 1,
       "isHistorized": 1,
