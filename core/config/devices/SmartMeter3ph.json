@@ -127,23 +127,7 @@
         "mobile": "line"
       }
     },
-	{
-      "name": "Amps AC",
-      "type": "info",
-      "subtype": "numeric",
-	  "unite": "A",
-	  "display": {
-        "generic_type": "DONT"
-      },
-      "isVisible": 1,
-      "isHistorized": 1,
-      "logicalId": "AmpsAC",
-      "template": {
-        "dashboard": "line",
-        "mobile": "line"
-      }
-    },
-		{
+    {
       "name": "Amps AC L1",
       "type": "info",
       "subtype": "numeric",
