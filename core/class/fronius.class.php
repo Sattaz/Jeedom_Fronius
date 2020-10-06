@@ -222,7 +222,7 @@ class fronius extends eqLogic {
 		}
         log::add('fronius','debug','Call : ' . $data);
         $json = json_decode($data, true);
-		log::add('fronius', 'debug','All good22: json='. $json['Body']['Data']['IAC']['Value']);
+		//log::add('fronius', 'debug','All good22: json='. $json['Body']['Data']['IAC']['Value']);
       
       	if (isset($json['Body']['Data']['IAC']['Value']) == true && ($this->getConfiguration('type') == 'Primo' || $this->getConfiguration('type') == 'SymoGen24')) {
           log::add('fronius', 'debug','All good33: Data='. $data);
@@ -262,7 +262,7 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('AmpsDC2', $json['Body']['Data']['IDC_2']['Value']);
 			return;
 		}
-	if ( isset($json['Body']['Data']['Details']['Model']) == true && ($json['Body']['Data']['Details']['Model'] == "Smart Meter 63A" || $json['Body']['Data']['Details']['Model'] == "Smart Meter 5kA-3" ) && ($this->getConfiguration('type') == 'SmartMeter3p')) {
+	if ( isset($json['Body']['Data']['Details']['Model']) == true &&  ($this->getConfiguration('type') == 'SmartMeter3p')) {
           log::add('fronius', 'debug','All good33: Data='. $data);
         
 			curl_close ($ch);
