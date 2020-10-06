@@ -262,7 +262,7 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('AmpsDC2', $json['Body']['Data']['IDC_2']['Value']);
 			return;
 		}
-	if (isset($json['Body']['Data']['Details']['Model']) == true && ($json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1" || $json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1") &&  $this->getConfiguration('type') == 'SmartMeter3ph') {
+	if (isset($json['Body']['Data']['Details']['Model']) == true && ($json['Body']['Data']['Details']['Model'] == "Smart Meter 63A" || $json['Body']['Data']['Details']['Model'] == "Smart Meter 5kA-3") &&  $this->getConfiguration('type') == 'SmartMeter3ph') {
 		
           log::add('fronius', 'debug','All good33: Data='. $data);
         
