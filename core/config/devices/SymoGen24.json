@@ -111,6 +111,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "Freq",
@@ -126,6 +129,9 @@
 	  "unite": "V",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -143,6 +149,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "VoltsACL2",
@@ -158,6 +167,9 @@
 	  "unite": "V",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -175,6 +187,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "VoltsDC",
@@ -190,6 +205,9 @@
 	  "unite": "V",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -207,6 +225,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "AmpsAC",
@@ -222,6 +243,9 @@
 	  "unite": "A",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -239,6 +263,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "AmpsACL2",
@@ -254,6 +281,9 @@
 	  "unite": "A",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,
@@ -271,6 +301,9 @@
 	  "display": {
         "generic_type": "DONT"
       },
+      "configuration" : {
+	"historizeRound":"2"
+      },
       "isVisible": 1,
       "isHistorized": 1,
       "logicalId": "AmpsDC",
@@ -286,6 +319,9 @@
 	  "unite": "A",
 	  "display": {
         "generic_type": "DONT"
+      },
+      "configuration" : {
+	"historizeRound":"2"
       },
       "isVisible": 1,
       "isHistorized": 1,

@@ -222,7 +222,7 @@ class fronius extends eqLogic {
 		}
         log::add('fronius','debug','Call : ' . $data);
         $json = json_decode($data, true);
-		log::add('fronius', 'debug','All good22: json='. $json['Body']['Data']['IAC']['Value']);
+		//log::add('fronius', 'debug','All good22: json='. $json['Body']['Data']['IAC']['Value']);
       
       	if (isset($json['Body']['Data']['IAC']['Value']) == true && ($this->getConfiguration('type') == 'Primo' || $this->getConfiguration('type') == 'SymoGen24')) {
           log::add('fronius', 'debug','All good33: Data='. $data);
@@ -262,7 +262,8 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('AmpsDC2', $json['Body']['Data']['IDC_2']['Value']);
 			return;
 		}
-	if ((isset($json['Body']['Data']['Details']['Model']) == "Smart Meter 63A" || isset($json['Body']['Data']['Details']['Model']) == "Smart Meter 5kA-3" ) && ($this->getConfiguration('type') == 'SmartMeter3p')) {
+	if (isset($json['Body']['Data']['Details']['Model']) == true && ($json['Body']['Data']['Details']['Model'] == "Smart Meter 63A" || $json['Body']['Data']['Details']['Model'] == "Smart Meter 5kA-3") &&  $this->getConfiguration('type') == 'SmartMeter3ph') {
+		
           log::add('fronius', 'debug','All good33: Data='. $data);
         
 			curl_close ($ch);
@@ -272,20 +273,19 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('VoltsAC', $json['Body']['Data']['SMARTMETER_VOLTAGE_MEAN_01_F64']);
 			$this->checkAndUpdateCmd('VoltsACL2', $json['Body']['Data']['SMARTMETER_VOLTAGE_MEAN_02_F64']);
 			$this->checkAndUpdateCmd('VoltsACL3', $json['Body']['Data']['SMARTMETER_VOLTAGE_MEAN_03_F64']);
-			//$this->checkAndUpdateCmd('AmpsAC', $json['Body']['Data']['IDC']['Value']);
 			$this->checkAndUpdateCmd('AmpsACL1', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_01_F32']);
 			$this->checkAndUpdateCmd('AmpsACL2', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_02_F32']);
 			$this->checkAndUpdateCmd('AmpsACL3', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_03_F32']);
-			$this->checkAndUpdateCmd('WattL1', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_01_F64']);
-			$this->checkAndUpdateCmd('WattL2', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_02_F64']);
-			$this->checkAndUpdateCmd('WattL3', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_03_F64']);
+			$this->checkAndUpdateCmd('WattL1', $json['Body']['Data']['SMARTMETER_POWERACTIVE_01_F64']);
+			$this->checkAndUpdateCmd('WattL2', $json['Body']['Data']['SMARTMETER_POWERACTIVE_02_F64']);
+			$this->checkAndUpdateCmd('WattL3', $json['Body']['Data']['SMARTMETER_POWERACTIVE_03_F64']);
 			$this->checkAndUpdateCmd('Watt', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_SUM_F64']);
 			$this->checkAndUpdateCmd('visible', $json['Body']['Data']['COMPONENTS_MODE_VISIBLE_U16']);
 			$this->checkAndUpdateCmd('StatusBinaire', $json['Body']['Data']['COMPONENTS_MODE_ENABLE_U16']);
           
 			
 		}
-	   if (isset($json['Body']['Data']['Details']['Model']) == "Smart Meter 63A-1" && ($this->getConfiguration('type') == 'SmartMeter1p')) {
+	   if (isset($json['Body']['Data']['Details']['Model']) == true && $json['Body']['Data']['Details']['Model'] == "Smart Meter 63A-1" &&  $this->getConfiguration('type') == 'SmartMeter1ph') {
           log::add('fronius', 'debug','All good33: Data='. $data);
         
 			curl_close ($ch);
@@ -293,15 +293,7 @@ class fronius extends eqLogic {
 			$this->checkAndUpdateCmd('Consommation', $json['Body']['Data']['SMARTMETER_ENERGYACTIVE_CONSUMED_SUM_F64']);
 			$this->checkAndUpdateCmd('Freq', $json['Body']['Data']['GRID_FREQUENCY_MEAN_F32']);
 			$this->checkAndUpdateCmd('VoltsAC', $json['Body']['Data']['SMARTMETER_VOLTAGE_MEAN_01_F64']);
-			//$this->checkAndUpdateCmd('VoltsACL2', $json['Body']['Data']['SMARTMETER_VOLTAGE_MEAN_02_F64']);
-			//$this->checkAndUpdateCmd('VoltsACL3', $json['Body']['Data']['SMARTMETER_VOLTAGE_MEAN_03_F64']);
-			//$this->checkAndUpdateCmd('AmpsAC', $json['Body']['Data']['IDC']['Value']);
 			$this->checkAndUpdateCmd('AmpsAC', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_01_F32']);
-			//$this->checkAndUpdateCmd('AmpsACL2', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_02_F32']);
-			//$this->checkAndUpdateCmd('AmpsACL3', $json['Body']['Data']['ACBRIDGE_CURRENT_ACTIVE_MEAN_03_F32']);
-			//$this->checkAndUpdateCmd('WattL1', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_01_F64']);
-			//$this->checkAndUpdateCmd('WattL2', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_02_F64']);
-			//$this->checkAndUpdateCmd('WattL3', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_03_F64']);
 			$this->checkAndUpdateCmd('Watt', $json['Body']['Data']['SMARTMETER_POWERACTIVE_MEAN_SUM_F64']);
 			$this->checkAndUpdateCmd('visible', $json['Body']['Data']['COMPONENTS_MODE_VISIBLE_U16']);
 			$this->checkAndUpdateCmd('StatusBinaire', $json['Body']['Data']['COMPONENTS_MODE_ENABLE_U16']);
