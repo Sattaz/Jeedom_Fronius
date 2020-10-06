@@ -201,7 +201,7 @@
       },
       "isVisible": 1,
       "isHistorized": 1,
-      "logicalId": "Watt L1",
+      "logicalId": "WattL1",
       "template": {
         "dashboard": "line",
         "mobile": "line"
@@ -217,7 +217,7 @@
       },
       "isVisible": 1,
       "isHistorized": 1,
-      "logicalId": "Watt L2",
+      "logicalId": "WattL2",
       "template": {
         "dashboard": "line",
         "mobile": "line"
@@ -233,7 +233,7 @@
       },
       "isVisible": 1,
       "isHistorized": 1,
-      "logicalId": "Watt L3",
+      "logicalId": "WattL3",
       "template": {
         "dashboard": "line",
         "mobile": "line"
